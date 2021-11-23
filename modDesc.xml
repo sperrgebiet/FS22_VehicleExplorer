@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="61">
+	<author>sperrgebiet</author>
+	<version>0.1.0.0</version>
+	<title>Vehicle Explorer</title>
+	<description>
+		<en>
+<![CDATA[
+This is a revamp of the good old VehicleSort from FS17.
+For beginners: VehicleExplorer helps you organize your vehicles, by showing you a list which can be organized, well, sorted by you.
+
+More Details: https://github.com/sperrgebiet/FS19_VehicleExplorer
+
+Kudos to Ifko[nator] for the RegisterSpecialization script.
+]]>
+		</en>
+		<de>
+<![CDATA[
+Dies ist eine Reinkarnation von VehicleSort aus LS17.
+Für Neueinsteiger: VehicleExplorer hilft beim organisiere der Fahrzeuge. Es zeigt eine Liste welche dann selbst nach eigenen Wünschen sortiert werden kann.
+
+Mehr Details: https://github.com/sperrgebiet/FS19_VehicleExplorer
+
+Kudos to Ifko[nator] for the RegisterSpecialization script.
+]]>
+		</de>
+	</description>
+	
+	<!-- "translations/l10n_<language>.xml -->
+	<l10n filenamePrefix="translations/l10n" />	
+
+	<iconFilename>icon.dds</iconFilename>
+	
+	<multiplayer supported="false" />
+
+	<extraSourceFiles>
+		<sourceFile filename="RegisterSpecialization.lua" />
+	</extraSourceFiles>
+
+	<registerSpecializations debugPriority="0">
+		<registerSpecialization name="vehicleSort" className="VehicleSort" filename="VehicleSort.lua" searchedSpecializations="Enterable"/>
+		<registerSpecialization name="vehicleStatus" className="VehicleStatus" filename="VehicleStatus.lua" searchedSpecializations="Motorized TurnOnVehicle Lights"/>
+	</registerSpecializations>	
+
+	<actions>
+		<action name="vsToggleList" 		axisType="HALF" />
+		<action name="vsLockListItem" 		axisType="HALF" />
+		<action name="vsMoveCursorUp"		axisType="HALF" />
+		<action name="vsMoveCursorDown" 	axisType="HALF" />
+		<action name="vsMoveCursorUpFast" 	axisType="HALF" />
+		<action name="vsMoveCursorDownFast" axisType="HALF" />
+		<action name="vsChangeVehicle" 		axisType="HALF" />
+		<action name="vsShowConfig" 		axisType="HALF" />
+		<action name="vsTogglePark" 		axisType="HALF" />
+		<action name="vsRepair" 			axisType="HALF" />
+		<action name="vsTab" 				axisType="HALF" />
+		<action name="vsTabBack" 			axisType="HALF" />
+		<action name="vsEasyTab" 			axisType="HALF" />
+	</actions>
+
+	<inputBinding>	
+		<actionBinding action="vsToggleList">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_v" index="1" />
+			<binding device="KB_MOUSE_DEFAULT" input="MOUSE_BUTTON_X1" axisComponent="+" neutralInput="0" index="3"/>
+		</actionBinding>
+		<actionBinding action="vsLockListItem">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_KP_5" index="1" />
+		</actionBinding>
+		<actionBinding action="vsMoveCursorUp">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_KP_8" index="1" />
+		</actionBinding>
+		<actionBinding action="vsMoveCursorDown">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_KP_2" index="1" />
+		</actionBinding>
+		<actionBinding action="vsMoveCursorUpFast">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_1" index="1" />
+		</actionBinding>
+		<actionBinding action="vsMoveCursorDownFast">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_2" index="1" />
+		</actionBinding>
+		<actionBinding action="vsChangeVehicle">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_KP_enter" index="1" />
+		</actionBinding>
+		<actionBinding action="vsShowConfig">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_KP_minus" index="1" />
+		</actionBinding>		
+		<actionBinding action="vsTogglePark">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_p" index="1" />
+		</actionBinding>
+		<actionBinding action="vsRepair">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_r" index="1" />
+		</actionBinding>
+		<actionBinding action="vsTab">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_tab" index="1" />
+		</actionBinding>
+		<actionBinding action="vsTabBack">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lshift KEY_tab" index="1" />
+		</actionBinding>
+		<actionBinding action="vsEasyTab">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_tab" index="1" />
+		</actionBinding>
+    </inputBinding>	
+
+</modDesc>
