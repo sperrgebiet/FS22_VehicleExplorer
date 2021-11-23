@@ -7,7 +7,7 @@ Besides that it has a couple of additional functionality. See below.
 Feedback, this readme and additional information incl. source code can be find at: https://github.com/sperrgebiet/FS22_VehicleExplorer
 
 **Please download the latest version directly from GitHub**
-[Latest version](https://github.com/sperrgebiet/FS22_VehicleExplorer/blob/master/FS22_VehicleExplorer.zip?raw=true)
+[Latest version](https://github.com/sperrgebiet/FS22_VehicleExplorer/blob/main/FS22_VehicleExplorer.zip?raw=true)
 
 ### Features
 * List of all steerable vehicles (Specialization: Enterable)
@@ -125,7 +125,7 @@ Für Neueinsteiger: VehicleExplorer hilft beim organisiere der Fahrzeuge. Es zei
 Feedback, dieses ReadMe und weitere Informationen sowie der Quelltext findet sich unter: https://github.com/sperrgebiet/FS22_VehicleExplorer
 
 **Bitte lade die letzte Version direkt von bei GitHub herunter**
-[Letzte Version](https://github.com/sperrgebiet/FS22_VehicleExplorer/blob/master/FS22_VehicleExplorer.zip?raw=true)
+[Letzte Version](https://github.com/sperrgebiet/FS22_VehicleExplorer/blob/main/FS22_VehicleExplorer.zip?raw=true)
 
 ### Funktionen
 * Liste aller steuerbaren Fahrzeuge (Specialization: Enterable)
