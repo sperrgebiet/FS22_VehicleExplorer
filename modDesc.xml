@@ -2,7 +2,11 @@
 <modDesc descVersion="61">
 	<author>sperrgebiet</author>
 	<version>0.1.0.0</version>
-	<title>Vehicle Explorer</title>
+	<title>
+        	<en>Vehicle Explorer</en>
+        	<de>Vehicle Explorer</de>
+        	<it>Esplora Veicoli</it>
+	</title>
 	<description>
 		<en>
 <![CDATA[
@@ -24,6 +28,16 @@ Mehr Details: https://github.com/sperrgebiet/FS19_VehicleExplorer
 Kudos to Ifko[nator] for the RegisterSpecialization script.
 ]]>
 		</de>
+		<it>
+<![CDATA[
+Questo è un rinnovamento del buon vecchio VehicleSort di FS17.
+Per i principianti: Vehicle Explorer ti aiuta a organizzare i tuoi veicoli, mostrandoti un elenco che può essere organizzato, beh, ordinato da te.
+
+Per altri dettagli: https://github.com/sperrgebiet/FS19_VehicleExplorer
+
+Complimenti a Ifko[nator] per lo script RegisterSpecialization.
+]]>
+		</it>
 	</description>
 	
 	<!-- "translations/l10n_<language>.xml -->
