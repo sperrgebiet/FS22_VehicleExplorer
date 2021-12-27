@@ -9,7 +9,7 @@
 This is a revamp of the good old VehicleSort from FS17.
 For beginners: VehicleExplorer helps you organize your vehicles, by showing you a list which can be organized, well, sorted by you.
 
-More Details: https://github.com/sperrgebiet/FS19_VehicleExplorer
+More Details: https://github.com/sperrgebiet/FS22_VehicleExplorer
 
 Kudos to Ifko[nator] for the RegisterSpecialization script.
 ]]>
@@ -19,11 +19,21 @@ Kudos to Ifko[nator] for the RegisterSpecialization script.
 Dies ist eine Reinkarnation von VehicleSort aus LS17.
 Für Neueinsteiger: VehicleExplorer hilft beim organisiere der Fahrzeuge. Es zeigt eine Liste welche dann selbst nach eigenen Wünschen sortiert werden kann.
 
-Mehr Details: https://github.com/sperrgebiet/FS19_VehicleExplorer
+Mehr Details: https://github.com/sperrgebiet/FS22_VehicleExplorer
 
 Kudos to Ifko[nator] for the RegisterSpecialization script.
 ]]>
 		</de>
+		<it>
+<![CDATA[
+Questo è un rifacimento del buon vecchio VehicleSort di FS17.
+Per i principianti: VehicleExplorer ti aiuta a organizzare i tuoi veicoli, mostrandoti un elenco che può essere organizzato, beh, riordinato da te. 
+
+Maggiori Dettagli: https://github.com/sperrgebiet/FS22_VehicleExplorer
+
+Ringraziamenti a Ifko[nator] per lo script RegisterSpecialization.
+]]>
+		</it>
 	</description>
 	
 	<!-- "translations/l10n_<language>.xml -->
