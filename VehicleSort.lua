@@ -913,11 +913,11 @@ function VehicleSort:getFullVehicleName(realId)
 	if VehicleSort:isParked(realId) then
 		nam = '[P] '; -- Prefix for parked (not part of tab list) vehicles
 	end
-	if g_currentMission.vehicles[realId] ~= nil and g_currentMission.vehicles[realId].getIsCourseplayDriving and g_currentMission.vehicles[realId]:getIsCourseplayDriving() then -- CoursePlay
+	if g_currentMission.vehicles[realId] ~= nil and VehicleSort:getIsCourseplay(g_currentMission.vehicles[realId]) then -- CoursePlay
 		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.courseplay);
 	elseif (g_currentMission.vehicles[realId].getIsFollowMeActive and g_currentMission.vehicles[realId]:getIsFollowMeActive()) then	--FollowMe
 		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.followme);
-	elseif (g_currentMission.vehicles[realId].ad ~= nil and g_currentMission.vehicles[realId].ad.isActive) then	--AutoDrive
+	elseif (g_currentMission.vehicles[realId].ad ~= nil and g_currentMission.vehicles[realId].ad.stateModule.active) then	--AutoDrive
 		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.autodrive);		
 	elseif VehicleSort:isHired(realId) then
 		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.hired);
@@ -1087,11 +1087,11 @@ function VehicleSort:getTextColor(index, realId)
 		return VehicleSort.tColor.self;
 	-- Not sure yet if it make sense to have multiple different colors for CP, AD, FM. I imagine it's getting to busy then. But lets give it a try
 	-- Has to be before 'isHired', otherwise will end up with the same hired color
-	elseif g_currentMission.vehicles[realId] ~= nil and g_currentMission.vehicles[realId].getIsCourseplayDriving and g_currentMission.vehicles[realId]:getIsCourseplayDriving() then
+	elseif g_currentMission.vehicles[realId] ~= nil and self:getIsCourseplay(g_currentMission.vehicles[realId]) then
 		return VehicleSort.tColor.courseplay;
 	elseif (g_currentMission.vehicles[realId].getIsFollowMeActive and g_currentMission.vehicles[realId]:getIsFollowMeActive()) then
 		return VehicleSort.tColor.followme;
-	elseif (g_currentMission.vehicles[realId].ad ~= nil and g_currentMission.vehicles[realId].ad.isActive) then
+	elseif (g_currentMission.vehicles[realId].ad ~= nil and g_currentMission.vehicles[realId].ad.stateModule.active) then
 		return VehicleSort.tColor.autodrive;		
 	elseif VehicleSort:isHired(realId) then
 		return VehicleSort.tColor.hired;
@@ -1280,8 +1280,10 @@ function VehicleSort:isParked(realId)
 end
 
 function VehicleSort:isHired(realId)
-	if g_currentMission.vehicles[realId] ~= nil and g_currentMission.vehicles[realId].spec_aiVehicle ~= nil then
-		return g_currentMission.vehicles[realId].spec_aiVehicle.isActive;
+	if g_currentMission.vehicles[realId] ~= nil and g_currentMission.vehicles[realId].spec_aiJobVehicle ~= nil then
+		if g_currentMission.vehicles[realId].spec_aiJobVehicle.job ~= nil then
+			return true
+		end
 	end
 end
 
@@ -1607,10 +1609,14 @@ function VehicleSort:getInfoTexts(realId)
 		
 		local doSpacing = false;
 		
-		if (veh.getIsCourseplayDriving ~= nil and veh:getIsCourseplayDriving()) then
+		-- This part doesn't work at the moment, but also doesn't make sense as long as we've no tasks
+		
+		-- spec_cpCourseManager.courses.1.name
+		--cpAIFieldWorker
+		if VehicleSort:getIsCourseplay(veh) then
 			local courseName = "";
-			if veh.cp.currentCourseName ~= nil then
-				courseName = veh.cp.currentCourseName;
+			if veh:getCurrentCpCourseName() ~= nil then
+				courseName = veh:getCurrentCpCourseName()
 			elseif veh.cp.mapHotspot ~= nil and veh.cp.mapHotspot.fullViewName ~= nil then
 				local str = tostring(veh.cp.mapHotspot.fullViewName);
 				local t = {}
@@ -1628,27 +1634,25 @@ function VehicleSort:getInfoTexts(realId)
 			doSpacing = true;
 		end
 		
-		if (veh.ad ~= nil and veh.ad.isActive) then
-			if veh.ad.nameOfSelectedTarget ~= nil then
-				if veh.ad.nameOfSelectedTarget_Unload ~= nil and veh.ad.mode ~= 1 then
-					local target1 = "";
-					local target2 = "";
-					if veh.ad.onRouteToSecondTarget then
-						target2 = " <<";
-					else
-						target1 = " <<";
-					end
-					
-					line = g_i18n.modEnvironments[VehicleSort.ModName].texts.ad_load .. ": " .. veh.ad.nameOfSelectedTarget .. target1;
-					table.insert(texts, line);
-					line = g_i18n.modEnvironments[VehicleSort.ModName].texts.ad_unload .. ": " .. veh.ad.nameOfSelectedTarget_Unload .. target2;
-					table.insert(texts, line);
+		if (veh.ad ~= nil and veh.ad.stateModule.active) then
+			if veh.ad.stateModule.firstMarker ~= nil and veh.ad.stateModule.mode ~= 1 then
+				local target1 = "";
+				local target2 = "";
+				if veh.ad.stateModule.currentDestination.id == veh.ad.stateModule.firstMarker.id then
+					target1 = " <<";
 				else
-					line = g_i18n.modEnvironments[VehicleSort.ModName].texts.ad_destination .. ": " .. veh.ad.nameOfSelectedTarget;
-					table.insert(texts, line);			
+					target2 = " <<";
 				end
-				doSpacing = true;
+				
+				line = g_i18n.modEnvironments[VehicleSort.ModName].texts.ad_load .. ": " .. veh.ad.stateModule.firstMarker.name .. target1;
+				table.insert(texts, line);
+				line = g_i18n.modEnvironments[VehicleSort.ModName].texts.ad_unload .. ": " .. veh.ad.stateModule.secondMarker.name .. target2;
+				table.insert(texts, line);
+			elseif veh.ad.stateModule.currentDestination ~= nil then
+				line = g_i18n.modEnvironments[VehicleSort.ModName].texts.ad_destination .. ": " .. veh.ad.stateModule.currentDestination.name
+				table.insert(texts, line);			
 			end
+			doSpacing = true;
 		end
 		
 		if veh.getIsOnField and veh:getIsOnField() then
@@ -2136,6 +2140,13 @@ function VehicleSort:showCenteredBlinkingWarning(text, blinkDuration)
 
 	VehicleSort:dp(string.format('CenteredText: {%s}', centeredText), 'showCenteredBlinkingWarning');
 	g_currentMission:showBlinkingWarning(centeredText, blinkDuration);
+end
+
+function VehicleSort:getIsCourseplay(veh)
+	--if veh.spec_cpAIFieldWorker ~= nil and veh.spec_cpAIFieldWorker.cpJob ~= nil then
+	--	return veh.spec_cpAIFieldWorker.cpJob.isRunning
+	--end
+	return veh:getIsCpActive()
 end
 
 --
