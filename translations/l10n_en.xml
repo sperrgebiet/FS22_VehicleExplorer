@@ -45,6 +45,7 @@
 		<text name="courseplay"								text="CP" />
 		<text name="followme"								text="FM" />
 		<text name="autodrive"								text="AD" />
+		<text name="aive"									text="AIVE" />
 		<text name="helper"									text="Helper" />
 		<text name="cp_course"								text="CP Course" />
 		<text name="cp_courseunknown"						text="Temporary course" />

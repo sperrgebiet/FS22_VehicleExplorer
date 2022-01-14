@@ -42,6 +42,8 @@
 		<text name="hired"									text="TRANSLATEDTEXT" />
 		<text name="courseplay"								text="TRANSLATEDTEXT" />
 		<text name="followme"								text="TRANSLATEDTEXT" />
+		<text name="autodrive"								text="TRANSLATEDTEXT" />
+		<text name="aive"									text="TRANSLATEDTEXT" />
 		<text name="helper"									text="TRANSLATEDTEXT" />
 		<text name="cp_course"								text="TRANSLATEDTEXT" />
 		<text name="cp_courseunknown"						text="TRANSLATEDTEXT" />
