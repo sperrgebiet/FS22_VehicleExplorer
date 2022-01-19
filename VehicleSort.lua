@@ -2151,7 +2151,9 @@ function VehicleSort:getIsCourseplay(veh)
 	--if veh.spec_cpAIFieldWorker ~= nil and veh.spec_cpAIFieldWorker.cpJob ~= nil then
 	--	return veh.spec_cpAIFieldWorker.cpJob.isRunning
 	--end
-	return veh:getIsCpActive()
+	if veh.getIsCpActive then
+		return veh:getIsCpActive()
+	end
 end
 
 --
