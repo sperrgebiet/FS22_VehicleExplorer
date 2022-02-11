@@ -53,6 +53,7 @@
 		<text name="ad_load"								text="AD Cargado" />
 		<text name="ad_unload"								text="AD Ablad" />
 		<text name="wear"									text="Daño" />
+		<text name="damage"									text="Averiar" />
 		<text name="motor"									text="Motor" />
 		<text name="turnedOn"								text="Encendido" />
 		<text name="lights"									text="Luces" />
@@ -66,7 +67,7 @@
 		<text name="cleanOnRepair"							text="Lavar en reparación" />
 		<text name="RepairDone"								text="Reparación realizada" />
 		<text name="CleaningDone"							text="Limpieza realizada" />
-		<text name="paintonRepair"							text="Repaint on repair (Seasons required)" />
+		<text name="paintonRepair"							text="Repaint on repair" />
 		<text name="RepaintDone"							text="Repainting done" />
 		<text name="integrateTardis"						text="Tardis integración" />
 		<text name="enterVehonTeleport"						text="Entrar en el vehículo después de la teletransportación." />

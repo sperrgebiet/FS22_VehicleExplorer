@@ -482,8 +482,8 @@ function VehicleSort:action_vsRepair(actionName, keyStatus, arg3, arg4, arg5)
 			blinkTime = 3000;
 		end
 		
-		--If Seasons is activated and we enabled 'repaint' in the config we also have to take care of this
-		if (g_seasons ~= nil) and (VehicleSort.config[29][2]) then
+		--If 'repaint' is enabled the config we also have to take care of this
+		if VehicleSort.config[29][2] then
 			VehicleStatus:RepaintVehicleWithImplements(VehicleSort.Sorted[VehicleSort.selectedIndex]);
 			table.insert(infoText, g_i18n.modEnvironments[VehicleSort.ModName].texts.RepaintDone);
 			blinkTime = 4000;
@@ -1711,7 +1711,7 @@ function VehicleSort:getInfoTexts(realId)
 			doSpacing = false;
 		end
 		
-		-- Get vehicle wear
+		-- Get vehicle wear and damage
 		if veh.getWearTotalAmount ~= nil then
 			line = g_i18n.modEnvironments[VehicleSort.ModName].texts.wear .. ": " .. VehicleSort:calcPercentage(veh:getWearTotalAmount(), 1) .. " %";
 			table.insert(texts, line);
@@ -1721,6 +1721,23 @@ function VehicleSort:getInfoTexts(realId)
 				if #impWear > 0 then
 					for i=1, VehicleSort.config[25][2] do
 						table.insert(texts, impWear[i]);
+					end
+				end
+				doSpacing = true;
+			end
+			doSpacing = true;
+		end
+		
+		-- Get vehicle damage
+		if veh.getDamageAmount then
+			line = g_i18n.modEnvironments[VehicleSort.ModName].texts.damage .. ": " .. VehicleSort:calcPercentage(veh:getDamageAmount(), 1) .. " %";
+			table.insert(texts, line);
+
+			if VehicleSort:getVehImplements(realId) ~= nil then
+				local impDamage = VehicleStatus:getVehImplementsDamage(realId);
+				if #impDamage > 0 then
+					for i=1, VehicleSort.config[25][2] do
+						table.insert(texts, impDamage[i]);
 					end
 				end
 				doSpacing = true;
@@ -1936,15 +1953,17 @@ function VehicleSort:tabVehicle(backwards)
 
 	-- We need the loop to check which vehicle we can actually enter
 	local run = 1;
-	while g_currentMission.vehicles[(VehicleSort.Sorted[nextId])]:getIsControlled() or VehicleSort:isParked(VehicleSort.Sorted[nextId]) do
+	if g_currentMission.vehicles[(VehicleSort.Sorted[nextId])] ~= nil and g_currentMission.vehicles[(VehicleSort.Sorted[nextId])].getIsControlled then
+		while g_currentMission.vehicles[(VehicleSort.Sorted[nextId])]:getIsControlled() or VehicleSort:isParked(VehicleSort.Sorted[nextId]) do
 
-		VehicleSort:getNextInTabList(nextId, backwards)
+			VehicleSort:getNextInTabList(nextId, backwards)
 
-		if run == #VehicleSort.Sorted then
-			VehicleSort.showNoVehicles();
-			return false;
+			if run == #VehicleSort.Sorted then
+				VehicleSort.showNoVehicles();
+				return false;
+			end
+			run = run + 1;
 		end
-		run = run + 1;
 	end
 	realVeh = g_currentMission.vehicles[VehicleSort.Sorted[nextId]];
 	g_currentMission:requestToEnterVehicle(realVeh);

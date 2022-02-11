@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="61">
+<modDesc descVersion="63">
 	<author>sperrgebiet</author>
-	<version>0.1.0.0</version>
+	<version>0.2.0.0</version>
 	<title>Vehicle Explorer</title>
 	<description>
 		<en>
@@ -9,7 +9,7 @@
 This is a revamp of the good old VehicleSort from FS17.
 For beginners: VehicleExplorer helps you organize your vehicles, by showing you a list which can be organized, well, sorted by you.
 
-More Details: https://github.com/sperrgebiet/FS19_VehicleExplorer
+More Details: https://github.com/sperrgebiet/FS22_VehicleExplorer
 
 Kudos to Ifko[nator] for the RegisterSpecialization script.
 ]]>
@@ -19,7 +19,7 @@ Kudos to Ifko[nator] for the RegisterSpecialization script.
 Dies ist eine Reinkarnation von VehicleSort aus LS17.
 Für Neueinsteiger: VehicleExplorer hilft beim organisiere der Fahrzeuge. Es zeigt eine Liste welche dann selbst nach eigenen Wünschen sortiert werden kann.
 
-Mehr Details: https://github.com/sperrgebiet/FS19_VehicleExplorer
+Mehr Details: https://github.com/sperrgebiet/FS22_VehicleExplorer
 
 Kudos to Ifko[nator] for the RegisterSpecialization script.
 ]]>
@@ -29,7 +29,7 @@ Kudos to Ifko[nator] for the RegisterSpecialization script.
 	<!-- "translations/l10n_<language>.xml -->
 	<l10n filenamePrefix="translations/l10n" />	
 
-	<iconFilename>icon.dds</iconFilename>
+	<iconFilename>modIcon.dds</iconFilename>
 	
 	<multiplayer supported="false" />
 

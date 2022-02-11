@@ -48,6 +48,7 @@
 		<text name="cp_course"								text="TRANSLATEDTEXT" />
 		<text name="cp_courseunknown"						text="TRANSLATEDTEXT" />
 		<text name="wear"									text="TRANSLATEDTEXT" />
+		<text name="damage"									text="TRANSLATEDTEXT" />
 		<text name="motor"									text="TRANSLATEDTEXT" />
 		<text name="turnedOn"								text="TRANSLATEDTEXT" />
 		<text name="lights"									text="TRANSLATEDTEXT" />
