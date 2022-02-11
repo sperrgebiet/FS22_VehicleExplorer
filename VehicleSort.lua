@@ -7,7 +7,7 @@ VehicleSort.eventName = {};
 
 VehicleSort.ModName = g_currentModName;
 VehicleSort.ModDirectory = g_currentModDirectory;
-VehicleSort.Version = "0.2.0.0";
+VehicleSort.Version = "0.2.0.1";
 
 
 VehicleSort.debug = fileExists(VehicleSort.ModDirectory ..'debug');
@@ -1228,7 +1228,7 @@ function VehicleSort:initVS()
 
 	VehicleSort:dp(VehicleSort.tPos, 'VehicleSort:init', 'tPos');
 	VehicleSort.userPath = getUserProfileAppPath();
-	VehicleSort.saveBasePath = VehicleSort.userPath .. 'modsSettings/VehicleExplorer/';
+	VehicleSort.saveBasePath = VehicleSort.userPath .. 'modSettings/VehicleExplorer/';
 -- ToDo MP
 	if g_currentMission.missionDynamicInfo.serverAddress ~= nil then --multi-player game and player is not the host (dedi already handled above)
 		VehicleSort.savePath = VehicleSort.saveBasePath .. g_currentMission.missionDynamicInfo.serverAddress .. '/';
@@ -1236,7 +1236,7 @@ function VehicleSort:initVS()
 		VehicleSort.savePath = VehicleSort.saveBasePath .. 'savegame' .. g_careerScreen.savegameList.selectedIndex .. '/';
 	end
 	
-	createFolder(VehicleSort.userPath .. 'modsSettings/');
+	createFolder(VehicleSort.userPath .. 'modSettings/');
 	createFolder(VehicleSort.saveBasePath);
 	createFolder(VehicleSort.savePath);
 	VehicleSort.xmlFilename = VehicleSort.savePath .. 'VeExConfig.xml';
