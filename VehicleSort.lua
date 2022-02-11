@@ -7,7 +7,7 @@ VehicleSort.eventName = {};
 
 VehicleSort.ModName = g_currentModName;
 VehicleSort.ModDirectory = g_currentModDirectory;
-VehicleSort.Version = "0.1.0.0";
+VehicleSort.Version = "0.2.0.0";
 
 
 VehicleSort.debug = fileExists(VehicleSort.ModDirectory ..'debug');
