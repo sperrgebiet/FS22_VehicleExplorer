@@ -45,6 +45,7 @@
 		<text name="courseplay"								text="CP" />
 		<text name="followme"								text="FM" />
 		<text name="autodrive"								text="AD" />
+		<text name="aive"									text="AIVE" />
 		<text name="helper"									text="Helper" />
 		<text name="cp_course"								text="CP Course" />
 		<text name="cp_courseunknown"						text="Temporary course" />
@@ -52,6 +53,7 @@
 		<text name="ad_load"								text="AD Load" />
 		<text name="ad_unload"								text="AD Unload" />
 		<text name="wear"									text="Wear" />
+		<text name="damage"									text="Damage" />
 		<text name="motor"									text="Engine" />
 		<text name="turnedOn"								text="Started" />
 		<text name="lights"									text="Lights" />
@@ -65,7 +67,7 @@
 		<text name="cleanOnRepair"							text="Clean on repair" />
 		<text name="RepairDone"								text="Repair done" />
 		<text name="CleaningDone"							text="Cleaning done" />
-		<text name="paintonRepair"							text="Repaint on repair (Seasons required)" />
+		<text name="paintonRepair"							text="Repaint on repair" />
 		<text name="RepaintDone"							text="Repainting done" />
 		<text name="integrateTardis"						text="Tardis integration" />
 		<text name="enterVehonTeleport"						text="Enter vehicle after teleportation" />

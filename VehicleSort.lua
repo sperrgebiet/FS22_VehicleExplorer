@@ -7,7 +7,7 @@ VehicleSort.eventName = {};
 
 VehicleSort.ModName = g_currentModName;
 VehicleSort.ModDirectory = g_currentModDirectory;
-VehicleSort.Version = "0.1.0.0";
+VehicleSort.Version = "0.2.0.1";
 
 
 VehicleSort.debug = fileExists(VehicleSort.ModDirectory ..'debug');
@@ -75,6 +75,7 @@ VehicleSort.tColor.hired 		= {0.0, 0.5, 1.0, 1.0}; 	-- blue
 VehicleSort.tColor.courseplay 	= {0.270, 0.55, 0.88, 1.0}; 	-- baby blue
 VehicleSort.tColor.followme 	= {0.92, 0.31, 0.69, 1.0}; 	-- light pink
 VehicleSort.tColor.autodrive 	= {0.03, 0.78, 0.85, 1.0}; 	-- aqua/turquoise
+VehicleSort.tColor.aive 		= {1.0, 0.5, 0.2, 1.0}; 	-- orange
 VehicleSort.tColor.self  		= {0.0, 1.0, 0.0, 1.0}; -- green
 VehicleSort.tColor.motorOn		= {0.9301, 0.7605, 0.0232, 1.0}; -- yellow
 
@@ -481,8 +482,8 @@ function VehicleSort:action_vsRepair(actionName, keyStatus, arg3, arg4, arg5)
 			blinkTime = 3000;
 		end
 		
-		--If Seasons is activated and we enabled 'repaint' in the config we also have to take care of this
-		if (g_seasons ~= nil) and (VehicleSort.config[29][2]) then
+		--If 'repaint' is enabled the config we also have to take care of this
+		if VehicleSort.config[29][2] then
 			VehicleStatus:RepaintVehicleWithImplements(VehicleSort.Sorted[VehicleSort.selectedIndex]);
 			table.insert(infoText, g_i18n.modEnvironments[VehicleSort.ModName].texts.RepaintDone);
 			blinkTime = 4000;
@@ -918,7 +919,9 @@ function VehicleSort:getFullVehicleName(realId)
 	elseif (g_currentMission.vehicles[realId].getIsFollowMeActive and g_currentMission.vehicles[realId]:getIsFollowMeActive()) then	--FollowMe
 		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.followme);
 	elseif (g_currentMission.vehicles[realId].ad ~= nil and g_currentMission.vehicles[realId].ad.stateModule.active) then	--AutoDrive
-		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.autodrive);		
+		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.autodrive);
+	elseif g_currentMission.vehicles[realId].aiveIsStarted then
+		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.aive);
 	elseif VehicleSort:isHired(realId) then
 		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.hired);
 	elseif VehicleSort:isControlled(realId) then
@@ -1092,7 +1095,9 @@ function VehicleSort:getTextColor(index, realId)
 	elseif (g_currentMission.vehicles[realId].getIsFollowMeActive and g_currentMission.vehicles[realId]:getIsFollowMeActive()) then
 		return VehicleSort.tColor.followme;
 	elseif (g_currentMission.vehicles[realId].ad ~= nil and g_currentMission.vehicles[realId].ad.stateModule.active) then
-		return VehicleSort.tColor.autodrive;		
+		return VehicleSort.tColor.autodrive;
+	elseif g_currentMission.vehicles[realId].aiveIsStarted then
+		return VehicleSort.tColor.aive;
 	elseif VehicleSort:isHired(realId) then
 		return VehicleSort.tColor.hired;
 	elseif VehicleStatus:getIsMotorStarted(g_currentMission.vehicles[realId]) then
@@ -1223,7 +1228,7 @@ function VehicleSort:initVS()
 
 	VehicleSort:dp(VehicleSort.tPos, 'VehicleSort:init', 'tPos');
 	VehicleSort.userPath = getUserProfileAppPath();
-	VehicleSort.saveBasePath = VehicleSort.userPath .. 'modsSettings/VehicleExplorer/';
+	VehicleSort.saveBasePath = VehicleSort.userPath .. 'modSettings/VehicleExplorer/';
 -- ToDo MP
 	if g_currentMission.missionDynamicInfo.serverAddress ~= nil then --multi-player game and player is not the host (dedi already handled above)
 		VehicleSort.savePath = VehicleSort.saveBasePath .. g_currentMission.missionDynamicInfo.serverAddress .. '/';
@@ -1231,7 +1236,7 @@ function VehicleSort:initVS()
 		VehicleSort.savePath = VehicleSort.saveBasePath .. 'savegame' .. g_careerScreen.savegameList.selectedIndex .. '/';
 	end
 	
-	createFolder(VehicleSort.userPath .. 'modsSettings/');
+	createFolder(VehicleSort.userPath .. 'modSettings/');
 	createFolder(VehicleSort.saveBasePath);
 	createFolder(VehicleSort.savePath);
 	VehicleSort.xmlFilename = VehicleSort.savePath .. 'VeExConfig.xml';
@@ -1638,7 +1643,7 @@ function VehicleSort:getInfoTexts(realId)
 			if veh.ad.stateModule.firstMarker ~= nil and veh.ad.stateModule.mode ~= 1 then
 				local target1 = "";
 				local target2 = "";
-				if veh.ad.stateModule.currentDestination.id == veh.ad.stateModule.firstMarker.id then
+				if veh.ad.stateModule.currentDestination ~= ni and (veh.ad.stateModule.currentDestination.id == veh.ad.stateModule.firstMarker.id) then
 					target1 = " <<";
 				else
 					target2 = " <<";
@@ -1706,7 +1711,7 @@ function VehicleSort:getInfoTexts(realId)
 			doSpacing = false;
 		end
 		
-		-- Get vehicle wear
+		-- Get vehicle wear and damage
 		if veh.getWearTotalAmount ~= nil then
 			line = g_i18n.modEnvironments[VehicleSort.ModName].texts.wear .. ": " .. VehicleSort:calcPercentage(veh:getWearTotalAmount(), 1) .. " %";
 			table.insert(texts, line);
@@ -1716,6 +1721,23 @@ function VehicleSort:getInfoTexts(realId)
 				if #impWear > 0 then
 					for i=1, VehicleSort.config[25][2] do
 						table.insert(texts, impWear[i]);
+					end
+				end
+				doSpacing = true;
+			end
+			doSpacing = true;
+		end
+		
+		-- Get vehicle damage
+		if veh.getDamageAmount then
+			line = g_i18n.modEnvironments[VehicleSort.ModName].texts.damage .. ": " .. VehicleSort:calcPercentage(veh:getDamageAmount(), 1) .. " %";
+			table.insert(texts, line);
+
+			if VehicleSort:getVehImplements(realId) ~= nil then
+				local impDamage = VehicleStatus:getVehImplementsDamage(realId);
+				if #impDamage > 0 then
+					for i=1, VehicleSort.config[25][2] do
+						table.insert(texts, impDamage[i]);
 					end
 				end
 				doSpacing = true;
@@ -1931,15 +1953,17 @@ function VehicleSort:tabVehicle(backwards)
 
 	-- We need the loop to check which vehicle we can actually enter
 	local run = 1;
-	while g_currentMission.vehicles[(VehicleSort.Sorted[nextId])]:getIsControlled() or VehicleSort:isParked(VehicleSort.Sorted[nextId]) do
+	if g_currentMission.vehicles[(VehicleSort.Sorted[nextId])] ~= nil and g_currentMission.vehicles[(VehicleSort.Sorted[nextId])].getIsControlled then
+		while g_currentMission.vehicles[(VehicleSort.Sorted[nextId])]:getIsControlled() or VehicleSort:isParked(VehicleSort.Sorted[nextId]) do
 
-		VehicleSort:getNextInTabList(nextId, backwards)
+			VehicleSort:getNextInTabList(nextId, backwards)
 
-		if run == #VehicleSort.Sorted then
-			VehicleSort.showNoVehicles();
-			return false;
+			if run == #VehicleSort.Sorted then
+				VehicleSort.showNoVehicles();
+				return false;
+			end
+			run = run + 1;
 		end
-		run = run + 1;
 	end
 	realVeh = g_currentMission.vehicles[VehicleSort.Sorted[nextId]];
 	g_currentMission:requestToEnterVehicle(realVeh);
@@ -2143,9 +2167,6 @@ function VehicleSort:showCenteredBlinkingWarning(text, blinkDuration)
 end
 
 function VehicleSort:getIsCourseplay(veh)
-	--if veh.spec_cpAIFieldWorker ~= nil and veh.spec_cpAIFieldWorker.cpJob ~= nil then
-	--	return veh.spec_cpAIFieldWorker.cpJob.isRunning
-	--end
 	if veh.getCpStatus ~= nil then
 		local cpStatus = veh:getCpStatus()
 		return cpStatus:getIsActive()
