@@ -1,74 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
+	<translationContributors>YOUR NAME</translationContributors>
 	<texts>
-		<text name="vs_title"								text="TRANSLATEDTEXT" />
-		<text name="input_vsToggleList"						text="TRANSLATEDTEXT" />
-		<text name="input_vsLockListItem"					text="TRANSLATEDTEXT" />
-		<text name="input_vsMoveCursorUp"					text="TRANSLATEDTEXT" />
-		<text name="input_vsMoveCursorDown"					text="TRANSLATEDTEXT" />
-		<text name="input_vsMoveCursorUpFast"				text="TRANSLATEDTEXT" />
-		<text name="input_vsMoveCursorDownFast"				text="TRANSLATEDTEXT" />
-		<text name="input_vsChangeVehicle"					text="TRANSLATEDTEXT" />
-		<text name="input_vsShowConfig"						text="TRANSLATEDTEXT" />
-		<text name="input_vsTogglePark"						text="TRANSLATEDTEXT" />
-		<text name="input_vsRepair"							text="TRANSLATEDTEXT" />
-		<text name="input_vsTab"							text="TRANSLATEDTEXT" />
-		<text name="input_vsTabBack"						text="TRANSLATEDTEXT" />
-		<text name="configHeadline"							text="TRANSLATEDTEXT" />
-		<text name="with"									text="TRANSLATEDTEXT" />
-		<text name="horsePower"								text="TRANSLATEDTEXT" />
-		<text name="showTrain"								text="TRANSLATEDTEXT" />
-		<text name="showCrane"								text="TRANSLATEDTEXT" />
-		<text name="showBrand"								text="TRANSLATEDTEXT" />
-		<text name="showHorsepower"							text="TRANSLATEDTEXT" />
-		<text name="showNames"								text="TRANSLATEDTEXT" />
-		<text name="showFillLevels"							text="TRANSLATEDTEXT" />
-		<text name="showPercentages"						text="TRANSLATEDTEXT" />
-		<text name="showEmpty"								text="TRANSLATEDTEXT" />
-		<text name="showHelp"								text="TRANSLATEDTEXT" />
-		<text name="bgTrans"								text="TRANSLATEDTEXT" />
-		<text name="txtSize"								text="TRANSLATEDTEXT" />
-		<text name="showSteerableImplements"				text="TRANSLATEDTEXT" />
-		<text name="showImplements"							text="TRANSLATEDTEXT" />
-		<text name="saveStatus"								text="TRANSLATEDTEXT" />
-		<text name="showImg"								text="TRANSLATEDTEXT" />
-		<text name="showInfo"								text="TRANSLATEDTEXT" />
-		<text name="infoStart"								text="TRANSLATEDTEXT" />
-		<text name="infoBg"									text="TRANSLATEDTEXT" />
-		<text name="imageBg"								text="TRANSLATEDTEXT" />
-		<text name="vs_train"								text="TRANSLATEDTEXT" />
-		<text name="vs_crane"								text="TRANSLATEDTEXT" />
-		<text name="vs_implement"							text="TRANSLATEDTEXT" />
-		<text name="hired"									text="TRANSLATEDTEXT" />
-		<text name="courseplay"								text="TRANSLATEDTEXT" />
-		<text name="followme"								text="TRANSLATEDTEXT" />
-		<text name="autodrive"								text="TRANSLATEDTEXT" />
-		<text name="aive"									text="TRANSLATEDTEXT" />
-		<text name="helper"									text="TRANSLATEDTEXT" />
-		<text name="cp_course"								text="TRANSLATEDTEXT" />
-		<text name="cp_courseunknown"						text="TRANSLATEDTEXT" />
-		<text name="wear"									text="TRANSLATEDTEXT" />
-		<text name="damage"									text="TRANSLATEDTEXT" />
-		<text name="motor"									text="TRANSLATEDTEXT" />
-		<text name="turnedOn"								text="TRANSLATEDTEXT" />
-		<text name="lights"									text="TRANSLATEDTEXT" />
-		<text name="speed"									text="TRANSLATEDTEXT" />
-		<text name="fillLevel"								text="TRANSLATEDTEXT" />
-		<text name="warningNoVehicles"						text="TRANSLATEDTEXT" />
-		<text name="listAlignment"							text="TRANSLATEDTEXT" />
-		<text name="left"									text="TRANSLATEDTEXT" />
-		<text name="right"									text="TRANSLATEDTEXT" />
-		<text name="center"									text="TRANSLATEDTEXT" />
-		<text name="cleanOnRepair"							text="TRANSLATEDTEXT" />
-		<text name="RepairDone"								text="TRANSLATEDTEXT" />
-		<text name="RepairCleaningDone"						text="TRANSLATEDTEXT" />
-		<text name="integrateTardis"						text="TRANSLATEDTEXT" />
-		<text name="enterVehonTeleport"						text="TRANSLATEDTEXT" />
-		<text name="showImgMaxImp"							text="TRANSLATEDTEXT" />
-		<text name="showInfoMaxImpl"						text="TRANSLATEDTEXT" />
-		<text name="useTwoColoredList"						text="TRANSLATEDTEXT" />
-		<text name="isLowered"								text="TRANSLATEDTEXT" />
-		<text name="turnedOnImplement"						text="TRANSLATEDTEXT" />
-		<text name="useVeExTabOrder"						text="TRANSLATEDTEXT" />		
+		<text name="vs_title"								text="Vehicle List" />
+		<text name="input_vsToggleList"						text="VeEx: Show vehicle list" />
+		<text name="input_vsLockListItem"					text="VeEx: Select list entry" />
+		<text name="input_vsMoveCursorUp"					text="VeEx: Move cursor up" />
+		<text name="input_vsMoveCursorDown"					text="VeEx: Move cursor down" />
+		<text name="input_vsMoveCursorUpFast"				text="VeEx: Move cursor up fast" />
+		<text name="input_vsMoveCursorDownFast"				text="VeEx: Move cursor down fast" />
+		<text name="input_vsChangeVehicle"					text="VeEx: Enter selected vehicle" />
+		<text name="input_vsShowConfig"						text="VeEx: Show configuration" />
+		<text name="input_vsTogglePark"						text="VeEx: Toggle vehicle parking" />
+		<text name="input_vsRepair"							text="VeEx: Repair vehicles incl. implements" />
+		<text name="input_vsTab"							text="VeEx: Switch to next vehicle" />
+		<text name="input_vsTabBack"						text="VeEx: Switch to previous vehicle" />
+		<text name="input_vsEasyTab"						text="VeEx: EasyTab" />
+		<text name="configHeadline"							text="VehicleSort Configuration" />
+		<text name="with"									text="with" />
+		<text name="horsePower"								text="HP" />
+		<text name="showTrain"								text="Show trains in vehicle list" />
+		<text name="showCrane"								text="Show train cranes in vehicle list" />
+		<text name="showBrand"								text="Show brand name in vehicle list" />
+		<text name="showHorsepower"							text="Show horse power" />
+		<text name="showNames"								text="Show names of players in vehicle list" />
+		<text name="showFillLevels"							text="Show fill level in vehicle list" />
+		<text name="showPercentages"						text="Show fill level as percentage" />
+		<text name="showEmpty"								text="Show fill level of empty vehicles" />
+		<text name="showHelp"								text="Show input binding (incl. Tardis if available)" />
+		<text name="bgTrans"								text="Background alpha transparency" />
+		<text name="txtSize"								text="Text size" />
+		<text name="showSteerableImplements"				text="Show steerable implements" />
+		<text name="showImplements"							text="Show attached implements in list" />
+		<text name="showImplementsMax"						text="Number of implements in list" />
+		<text name="saveStatus"								text="Save vehicle status" />
+		<text name="showImg"								text="Show images" />
+		<text name="showInfo"								text="Show infobox" />
+		<text name="infoStart"								text="Move Infobox/image vertically" />
+		<text name="infoBg"									text="Show Infobox background" />
+		<text name="imageBg"								text="Show image background" />
+		<text name="vs_train"								text="Train" />
+		<text name="vs_crane"								text="Crane" />
+		<text name="vs_implement"							text="Implement" />
+		<text name="hired"									text="H" />
+		<text name="courseplay"								text="CP" />
+		<text name="followme"								text="FM" />
+		<text name="autodrive"								text="AD" />
+		<text name="aive"									text="AIVE" />
+		<text name="helper"									text="Helper" />
+		<text name="cp_course"								text="CP Course" />
+		<text name="cp_courseunknown"						text="Temporary course" />
+		<text name="ad_destination"							text="AD Destination" />
+		<text name="ad_load"								text="AD Load" />
+		<text name="ad_unload"								text="AD Unload" />
+		<text name="wear"									text="Wear" />
+		<text name="damage"									text="Damage" />
+		<text name="motor"									text="Engine" />
+		<text name="turnedOn"								text="Started" />
+		<text name="lights"									text="Lights" />
+		<text name="speed"									text="Speed" />
+		<text name="fillLevel"								text="Filllevel" />
+		<text name="warningNoVehicles"						text="There are no vehicles to show. Please buy some, or change the settings in the config menu so that not everything gets filter out." />
+		<text name="listAlignment"							text="List text alignment" />
+		<text name="left"									text="L" />
+		<text name="right"									text="R" />
+		<text name="center"									text="C" />
+		<text name="cleanOnRepair"							text="Clean on repair" />
+		<text name="RepairDone"								text="Repair done" />
+		<text name="CleaningDone"							text="Cleaning done" />
+		<text name="paintonRepair"							text="Repaint on repair" />
+		<text name="RepaintDone"							text="Repainting done" />
+		<text name="integrateTardis"						text="Tardis integration" />
+		<text name="enterVehonTeleport"						text="Enter vehicle after teleportation" />
+		<text name="showImgMaxImp"							text="Max. images of implements" />
+		<text name="showInfoMaxImpl"						text="Max. number of implements in infobox" />
+		<text name="useTwoColoredList"						text="Use two alternating colors for the vehicle list" />
+		<text name="isLowered"								text="Lowered" />
+		<text name="turnedOnImplement"						text="Turned on" />	
+		<text name="useVeExTabOrder"						text="Use VehicleExplorers ordered list for tabbing" />
+		<text name="field"									text="Field" />
+		<text name="operationHours"							text="Operation hours" />
 	</texts>
 </l10n>

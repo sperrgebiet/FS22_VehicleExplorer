@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+	<translationContributors>Gonimy-Vetrom</translationContributors>
+	<texts>
+		<text name="vs_title"								text="Список техники" />
+		<text name="input_vsToggleList"						text="VeEx: Показать список" />
+		<text name="input_vsLockListItem"					text="VeEx: Выбрать пункт списка" />
+		<text name="input_vsMoveCursorUp"					text="VeEx: Курсор вверх" />
+		<text name="input_vsMoveCursorDown"					text="VeEx: Курсор вниз" />
+		<text name="input_vsMoveCursorUpFast"				text="VeEx: Курсор вверх быстро" />
+		<text name="input_vsMoveCursorDownFast"				text="VeEx: Курсор вниз быстро" />
+		<text name="input_vsChangeVehicle"					text="VeEx: Сесть в выбранный" />
+		<text name="input_vsShowConfig"						text="VeEx: Показать настройки" />
+		<text name="input_vsTogglePark"						text="VeEx: ВКЛ/ВЫКЛ парковку" />
+		<text name="input_vsRepair"							text="VeEx: Починить технику вкл. оборудование" />
+		<text name="input_vsTab"							text="VeEx: Переключится на след. технику" />
+		<text name="input_vsTabBack"						text="VeEx: Переключится на предыд. технику" />
+		<text name="input_vsEasyTab"						text="VeEx: EasyTab" />
+		<text name="configHeadline"							text="Настройки VehicleSort" />
+		<text name="with"									text="+" />
+		<text name="horsePower"								text="л.с." />
+		<text name="showTrain"								text="Отображать поезд в списке" />
+		<text name="showCrane"								text="Отображать кран в списке" />
+		<text name="showBrand"								text="Отображать бренд техники в списке" />
+		<text name="showHorsepower"							text="Отображать мощность" />
+		<text name="showNames"								text="Отображать имя игрока в списке" />
+		<text name="showFillLevels"							text="Отображать уровень заполнения в списке" />
+		<text name="showPercentages"						text="Отображать уровень заполнения в %" />
+		<text name="showEmpty"								text="Отображать уровень заполнения в пустой технике" />
+		<text name="showHelp"								text="Показывать сочетание клавиш (включая Tardis, если установлен)" />
+		<text name="bgTrans"								text="Прозрачность подложки окна настроек" />
+		<text name="txtSize"								text="Размер текста" />
+		<text name="showSteerableImplements"				text="Отображать управляемую технику" />
+		<text name="showImplements"							text="Отображать в списке присоеденённое оборудование" />
+		<text name="showImplementsMax"						text="К-во присоеденённых оборудований в списке" />
+		<text name="saveStatus"								text="Сохранять состояние техники после перезагрузки" />
+		<text name="showImg"								text="Отображать изображения" />
+		<text name="showInfo"								text="Отображать infobox" />
+		<text name="infoStart"								text="Переместить вертикально Infobox/иконки" />
+		<text name="infoBg"									text="Отображать подложку для Infobox" />
+		<text name="imageBg"								text="Отображать подложку для иконок" />
+		<text name="vs_train"								text="Поезд" />
+		<text name="vs_crane"								text="Кран" />
+		<text name="vs_implement"							text="Оборудование" />
+		<text name="hired"									text="H" />
+		<text name="courseplay"								text="CP" />
+		<text name="followme"								text="FM" />
+		<text name="autodrive"								text="AD" />
+		<text name="aive"									text="AIVE" />
+		<text name="helper"									text="Helper" />
+		<text name="cp_course"								text="CP Course" />
+		<text name="cp_courseunknown"						text="Временный курс" />
+		<text name="ad_destination"							text="AD Локация" />
+		<text name="ad_load"								text="AD Загрузка" />
+		<text name="ad_unload"								text="AD Разгрузка" />
+		<text name="wear"									text="Износ" />
+		<text name="damage"									text="Повреждат" />
+		<text name="motor"									text="Двигатель" />		
+		<text name="turnedOn"								text="Заводиться" />
+		<text name="lights"									text="Свет" />
+		<text name="speed"									text="Скорость" />
+		<text name="fillLevel"								text="Заполнено" />
+		<text name="warningNoVehicles"						text="Для отображения нет транспортных средств. Пожалуйста, купите несколько или измените настройки в меню конфигурации, чтобы отфильтровывалось не все." />
+		<text name="listAlignment"							text="Выравнивание текста в списке техники" />
+		<text name="left"									text="Л" />
+		<text name="right"									text="П" />
+		<text name="center"									text="Ц" />
+		<text name="cleanOnRepair"							text="Мыть технику во время ремонта" />
+		<text name="RepairDone"								text="Ремонт закончен" />
+		<text name="CleaningDone"							text="Мойка завершена" />
+		<text name="paintonRepair"							text="Перекрашивать во время ремонта (необходим Seasons)" />
+		<text name="RepaintDone"							text="Перекраска выполнена" />
+		<text name="integrateTardis"						text="Интеграция в Tardis" />
+		<text name="enterVehonTeleport"						text="Сесть в технику после телепортации" />
+		<text name="showImgMaxImp"							text="Макс. к-во изображений орудий" />
+		<text name="showInfoMaxImpl"						text="Макс. к-во изображений орудий в infobox" />
+		<text name="useTwoColoredList"						text="Использовать два чередующихся цвета для списка" />
+		<text name="isLowered"								text="Опущено" />
+		<text name="turnedOnImplement"						text="Включено" />	
+		<text name="useVeExTabOrder"						text="Для табуляции использовать упорядоченный список VehicleExplorers " />
+		<text name="field"									text="Поле" />
+		<text name="operationHours"							text="Моточасы" />
+	</texts>
+</l10n>

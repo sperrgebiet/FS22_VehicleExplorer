@@ -46,6 +46,7 @@
 		<text name="courseplay"								text="CP" />
 		<text name="followme"								text="FM" />
 		<text name="autodrive"								text="AD" />
+		<text name="aive"									text="AIVE" />
 		<text name="helper"									text="Aiutante" />
 		<text name="cp_course"								text="CP Percorso" />
 		<text name="cp_courseunknown"						text="Percorso temporaneo" />
@@ -54,6 +55,7 @@
 		<text name="ad_unload"								text="AD Scaricamento" />
 		<text name="wear"									text="Danno" />
 		<text name="motor"									text="Motore" />
+		<text name="damage"									text="Danno" />
 		<text name="turnedOn"								text="Acceso" />
 		<text name="lights"									text="Luci" />
 		<text name="speed"									text="Velocità" />

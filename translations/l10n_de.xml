@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
+	<translationContributors>sperrgebiet</translationContributors>
 	<texts>
 		<text name="vs_title"								text="Fahrzeugliste" />
 		<text name="input_vsToggleList"						text="VeEx: Fahrzeugliste anzeigen" />

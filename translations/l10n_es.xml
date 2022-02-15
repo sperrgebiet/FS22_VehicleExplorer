@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
+	<translationContributors>Can't remember, sorry</translationContributors>
 	<texts>
 		<text name="vs_title"								text="Lista Vehiculos" />
 		<text name="input_vsToggleList"						text="VeEx: Mostrar Lista Vehiculos" />
