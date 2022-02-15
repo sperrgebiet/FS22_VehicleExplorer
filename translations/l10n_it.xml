@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+  <translationContributors>Markus33-ITA</translationContributors>
+	<texts>
+		<text name="vs_title"								text="Elenco veicoli" />
+		<text name="input_vsToggleList"						text="VeEx: Mostra elenco veicoli" />
+		<text name="input_vsLockListItem"					text="VeEx: Seleziona la voce dell'elenco" />
+		<text name="input_vsMoveCursorUp"					text="VeEx: Sposta il cursore in alto" />
+		<text name="input_vsMoveCursorDown"					text="VeEx: Sposta il cursore in basso" />
+		<text name="input_vsMoveCursorUpFast"				text="VeEx: Sposta velocemente il cursore in alto" />
+		<text name="input_vsMoveCursorDownFast"				text="VeEx: Sposta velocemente il cursore in basso" />
+		<text name="input_vsChangeVehicle"					text="VeEx: Inserisci il veicolo selezionato" />
+		<text name="input_vsShowConfig"						text="VeEx: Mostra configurazione" />
+		<text name="input_vsTogglePark"						text="VeEx: Parcheggia/sblocca il veicolo" />
+		<text name="input_vsRepair"							text="VeEx: Riparazione veicoli incl. attrezzi" />
+		<text name="input_vsTab"							text="VeEx: Passa al veicolo successivo" />
+		<text name="input_vsTabBack"						text="VeEx: Passa al veicolo precedente" />
+		<text name="input_vsEasyTab"						text="VeEx: TAB facile" />
+		<text name="configHeadline"							text="Configurazione dell'ordinamento del veicolo" />
+		<text name="with"									text="con" />
+		<text name="horsePower"								text="HP/CV" />
+		<text name="showTrain"								text="Mostra i treni nell'elenco dei veicoli" />
+		<text name="showCrane"								text="Mostra le gru del treno nell'elenco dei veicoli" />
+		<text name="showBrand"								text="Mostra il nome del marchio nell'elenco dei veicoli" />
+		<text name="showHorsepower"							text="Mostra la potenza del motore (HP/CV)" />
+		<text name="showNames"								text="Visualizza i nomi dei giocatori nell'elenco dei veicoli" />
+		<text name="showFillLevels"							text="Mostra il livello di riempimento nell'elenco dei veicoli" />
+		<text name="showPercentages"						text="Visualizzazione del livello di riempimento in percentuale" />
+		<text name="showEmpty"								text="Mostra l'indicatore del livello di riempimento per i veicoli vuoti" />
+		<text name="showHelp"								text="Mostra assegnazione tasti (incluso Tardis se disponibile)" />
+		<text name="bgTrans"								text="Trasparenza alfa dello sfondo" />
+		<text name="txtSize"								text="Dimensione del testo" />
+		<text name="showSteerableImplements"				text="Mostra strumenti guidabili" />
+		<text name="showImplements"							text="Mostra i dispositivi collegati nell'elenco" />
+		<text name="showImplementsMax"						text="Numero di dispositivi collegati nell'elenco" />
+		<text name="saveStatus"								text="Salva lo stato del veicolo" />
+		<text name="showImg"								text="Mostra le immagini" />
+		<text name="showInfo"								text="Mostra riquadro informazioni" />
+		<text name="infoStart"								text="Sposta la casella Info/immagine verticalmente" />
+		<text name="infoBg"									text="Mostra sfondo riquadro informazioni" />
+		<text name="imageBg"								text="Mostra lo sfondo dell'immagine" />
+		<text name="vs_train"								text="Treno" />
+		<text name="vs_crane"								text="Gru" />
+		<text name="vs_implement"							text="Strumento" />
+		<text name="hired"									text="H" />
+		<text name="courseplay"								text="CP" />
+		<text name="followme"								text="FM" />
+		<text name="autodrive"								text="AD" />
+		<text name="helper"									text="Aiutante" />
+		<text name="cp_course"								text="CP Percorso" />
+		<text name="cp_courseunknown"						text="Percorso temporaneo" />
+		<text name="ad_destination"							text="AD Destinazione" />
+		<text name="ad_load"								text="AD Caricamento" />
+		<text name="ad_unload"								text="AD Scaricamento" />
+		<text name="wear"									text="Danno" />
+		<text name="motor"									text="Motore" />
+		<text name="turnedOn"								text="Acceso" />
+		<text name="lights"									text="Luci" />
+		<text name="speed"									text="Velocità" />
+		<text name="fillLevel"								text="Livello di riempimento" />
+		<text name="warningNoVehicles"						text="Non ci sono veicoli da visualizzare. Si prega di acquistarne alcuni o di modificare le impostazioni nel menù di configurazione in modo da non filtrarli tutti." />
+		<text name="listAlignment"							text="Allineamento del testo dell'elenco" />
+		<text name="left"									text="Sinistra" />
+		<text name="right"									text="Destra" />
+		<text name="center"									text="Centro" />
+		<text name="cleanOnRepair"							text="Lavaggio durante la riparazione" />
+		<text name="RepairDone"								text="Riparazione effettuata" />
+		<text name="CleaningDone"							text="Veicolo lavato" />
+		<text name="paintonRepair"							text="Riverniciatura in riparazione (richiede le stagioni)" />
+		<text name="RepaintDone"							text="Riverniciatura effettuata" />
+		<text name="integrateTardis"						text="Integrazione Tardis" />
+		<text name="enterVehonTeleport"						text="Entra nel veicolo dopo il teletrasporto" />
+		<text name="showImgMaxImp"							text="Numero max. immagini di attrezzi" />
+		<text name="showInfoMaxImpl"						text="Numero max. di attrezzi nell'infobox" />
+		<text name="useTwoColoredList"						text="Usa due colori alternati per l'elenco dei veicoli" />
+		<text name="isLowered"								text="Abbassato" />
+		<text name="turnedOnImplement"						text="Acceso" />
+		<text name="useVeExTabOrder"						text="Usa l'elenco ordinato di VehicleExplorers per la tabulazione" />
+		<text name="field"									text="Campo" />
+		<text name="operationHours"							text="Ore di servizio" />
+	</texts>
+</l10n>
