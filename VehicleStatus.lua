@@ -6,7 +6,7 @@ VehicleStatus = {};
 
 VehicleStatus.ModName = g_currentModName;
 VehicleStatus.ModDirectory = g_currentModDirectory;
-VehicleStatus.Version = "0.1.0.0";
+VehicleStatus.Version = "0.2.0.1";
 
 
 VehicleStatus.debug = fileExists(VehicleStatus.ModDirectory ..'debug');
@@ -276,6 +276,28 @@ function VehicleStatus:getVehImplementsWear(realId)
 			
 			if (imp ~= nil and imp.object ~= nil and imp.object.getWearTotalAmount ~= nil) then
 				line = string.gsub(VehicleSort:getAttachmentName(imp.object), "%s$", "") .. " | " .. g_i18n.modEnvironments[VehicleSort.ModName].texts.wear .. ": " .. VehicleSort:calcPercentage(imp.object:getWearTotalAmount(), 1) .. " %";
+				table.insert(texts, line);
+			end
+		end
+		
+		return texts;
+	else
+		return nil;
+	end
+end
+
+function VehicleStatus:getVehImplementsDamage(realId)
+	local texts = {};
+	local line = "";
+
+	local implements = VehicleSort:getVehImplements(realId);
+	if implements ~= nil then
+	
+		for i = 1, #implements do
+			local imp = implements[i];
+			
+			if (imp ~= nil and imp.object ~= nil and imp.object.getDamageAmount ~= nil) then
+				line = string.gsub(VehicleSort:getAttachmentName(imp.object), "%s$", "") .. " | " .. g_i18n.modEnvironments[VehicleSort.ModName].texts.damage .. ": " .. VehicleSort:calcPercentage(imp.object:getDamageAmount(), 1) .. " %";
 				table.insert(texts, line);
 			end
 		end
