@@ -77,7 +77,7 @@ while true do
 		and searchedSpecializations ~= ""
 	then
 		if g_specializationManager:getSpecializationByName(specializationName) == nil then
-			g_specializationManager:addSpecialization(specializationName, specializationClassName, specializationFilename, true, nil);
+			g_specializationManager:addSpecialization(specializationName, specializationClassName, specializationFilename, nil);
 			
 			for vehicleType, vehicle in pairs(g_vehicleTypeManager.types) do
 				if vehicle ~= nil then
