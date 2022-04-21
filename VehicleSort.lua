@@ -7,7 +7,7 @@ VehicleSort.eventName = {};
 
 VehicleSort.ModName = g_currentModName;
 VehicleSort.ModDirectory = g_currentModDirectory;
-VehicleSort.Version = "0.2.0.1";
+VehicleSort.Version = "0.2.0.3";
 
 
 VehicleSort.debug = fileExists(VehicleSort.ModDirectory ..'debug');
@@ -811,9 +811,11 @@ function VehicleSort:getVehImplements(realId)
 			local allImp = {}
 			-- Credits to Tardis from FS17
 			local function addAllAttached(obj)
-				for _, imp in pairs(obj:getAttachedImplements()) do
-					addAllAttached(imp.object);
-					table.insert(allImp, imp);
+				if obj.getAttachedImplements ~= nil then
+					for _, imp in pairs(obj:getAttachedImplements()) do
+						addAllAttached(imp.object);
+						table.insert(allImp, imp);
+					end
 				end
 			end
                 
