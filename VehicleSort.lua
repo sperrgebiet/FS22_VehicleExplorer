@@ -5,8 +5,11 @@
 VehicleSort = {};
 VehicleSort.eventName = {};
 
-VehicleSort.ModName = g_currentModName;
-VehicleSort.ModDirectory = g_currentModDirectory;
+-- It's great that Giants gets rid of functions as part of an update. Now we can do things more complicated than before
+--VehicleSort.ModName = g_currentModName
+--VehicleSort.ModDirectory = g_currentModDirectory
+VehicleSort.ModName = "FS22_VehicleExplorer"
+VehicleSort.ModDirectory = g_modManager.nameToMod.FS22_VehicleExplorer.modDir
 VehicleSort.Version = "0.2.0.3";
 
 

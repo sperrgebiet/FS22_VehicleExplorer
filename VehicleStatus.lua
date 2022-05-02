@@ -4,8 +4,11 @@
 
 VehicleStatus = {};
 
-VehicleStatus.ModName = g_currentModName;
-VehicleStatus.ModDirectory = g_currentModDirectory;
+-- It's great that Giants gets rid of functions as part of an update. Now we can do things more complicated than before
+--VehicleStatus.ModName = g_currentModName
+--VehicleStatus.ModDirectory = g_currentModDirectory
+VehicleStatus.ModName = "FS22_VehicleExplorer";
+VehicleStatus.ModDirectory = g_modManager.nameToMod.FS22_VehicleExplorer.modDir
 VehicleStatus.Version = "0.2.0.1";
 
 
