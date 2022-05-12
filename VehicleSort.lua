@@ -260,6 +260,7 @@ function VehicleSort:mouseEvent(posX, posY, isDown, isUp, button)
 
 	if VehicleSort:isActionAllowed() and ( isDown and button == Input.MOUSE_BUTTON_RIGHT) then
 		VehicleSort.action_vsLockListItem();
+		VehicleSort.showVehicles = false;
 	end
 
 	if VehicleSort:isActionAllowed() and ( isDown and Input.isMouseButtonPressed(Input.MOUSE_BUTTON_WHEEL_UP)) then
