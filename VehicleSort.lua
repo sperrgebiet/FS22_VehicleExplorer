@@ -10,7 +10,7 @@ VehicleSort.eventName = {};
 --VehicleSort.ModDirectory = g_currentModDirectory
 VehicleSort.ModName = "FS22_VehicleExplorer"
 VehicleSort.ModDirectory = g_modManager.nameToMod.FS22_VehicleExplorer.modDir
-VehicleSort.Version = "0.2.0.3";
+VehicleSort.Version = "0.2.0.4";
 
 
 VehicleSort.debug = fileExists(VehicleSort.ModDirectory ..'debug');
@@ -923,7 +923,7 @@ function VehicleSort:getFullVehicleName(realId)
 		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.courseplay);
 	elseif (g_currentMission.vehicles[realId].getIsFollowMeActive and g_currentMission.vehicles[realId]:getIsFollowMeActive()) then	--FollowMe
 		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.followme);
-	elseif (g_currentMission.vehicles[realId].ad ~= nil and g_currentMission.vehicles[realId].ad.stateModule.active) then	--AutoDrive
+	elseif (g_currentMission.vehicles[realId].ad ~= nil and g_currentMission.vehicles[realId].ad.stateModule ~= nil and g_currentMission.vehicles[realId].ad.stateModule.active) then	--AutoDrive
 		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.autodrive);
 	elseif g_currentMission.vehicles[realId].aiveIsStarted then
 		nam = nam .. string.format(tmpString, g_i18n.modEnvironments[VehicleSort.ModName].texts.aive);
@@ -1099,7 +1099,7 @@ function VehicleSort:getTextColor(index, realId)
 		return VehicleSort.tColor.courseplay;
 	elseif (g_currentMission.vehicles[realId].getIsFollowMeActive and g_currentMission.vehicles[realId]:getIsFollowMeActive()) then
 		return VehicleSort.tColor.followme;
-	elseif (g_currentMission.vehicles[realId].ad ~= nil and g_currentMission.vehicles[realId].ad.stateModule.active) then
+	elseif (g_currentMission.vehicles[realId].ad ~= nil and g_currentMission.vehicles[realId].ad.stateModule ~= nil and g_currentMission.vehicles[realId].ad.stateModule.active) then
 		return VehicleSort.tColor.autodrive;
 	elseif g_currentMission.vehicles[realId].aiveIsStarted then
 		return VehicleSort.tColor.aive;
