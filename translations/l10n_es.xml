@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
-	<translationContributors>Can't remember, sorry</translationContributors>
+	<translationContributors>Vanquish081</translationContributors>
 	<texts>
 		<text name="vs_title"								text="Lista Vehiculos" />
 		<text name="input_vsToggleList"						text="VeEx: Mostrar Lista Vehiculos" />
@@ -31,7 +31,7 @@
 		<text name="bgTrans"								text="Fondo transparente" />
 		<text name="txtSize"								text="Tamaño texto" />
 		<text name="showSteerableImplements"				text="Mostrar herramientas conducibles" />
-		<text name="showImplements"							text="Mostrar herramientas enganchables in lista" />
+		<text name="showImplements"							text="Mostrar herramientas enganchables en lista" />
 		<text name="showImplementsMax"						text="Número de implementos mostrados en la lista" />
 		<text name="saveStatus"								text="Guardar estado vehículo" />
 		<text name="showImg"								text="Mostrar imagenes" />
@@ -46,15 +46,14 @@
 		<text name="courseplay"								text="CP" />
 		<text name="followme"								text="FM" />
 		<text name="autodrive"								text="AD" />
-		<text name="autodrive"								text="AIVE" />
 		<text name="helper"									text="Ayudante" />
 		<text name="cp_course"								text="Ruta CP" />
 		<text name="cp_courseunknown"						text="Ruta temporal" />
 		<text name="ad_destination"							text="AD Ruta" />
 		<text name="ad_load"								text="AD Cargado" />
 		<text name="ad_unload"								text="AD Ablad" />
-		<text name="wear"									text="Daño" />
-		<text name="damage"									text="Averiar" />
+		<text name="wear"									text="Desgaste" />
+		<text name="damage"									text="Daño" />
 		<text name="motor"									text="Motor" />
 		<text name="turnedOn"								text="Encendido" />
 		<text name="lights"									text="Luces" />
@@ -68,8 +67,8 @@
 		<text name="cleanOnRepair"							text="Lavar en reparación" />
 		<text name="RepairDone"								text="Reparación realizada" />
 		<text name="CleaningDone"							text="Limpieza realizada" />
-		<text name="paintonRepair"							text="Repaint on repair" />
-		<text name="RepaintDone"							text="Repainting done" />
+		<text name="paintonRepair"							text="Repintar Y Reparar" />
+		<text name="RepaintDone"							text="Reparación Hecha" />
 		<text name="integrateTardis"						text="Tardis integración" />
 		<text name="enterVehonTeleport"						text="Entrar en el vehículo después de la teletransportación." />
 		<text name="showImgMaxImp"							text="Máximo imagenes de implementos" />
@@ -77,8 +76,8 @@
 		<text name="useTwoColoredList"						text="Utilice dos colores alternos para la lista de vehículos" />
 		<text name="isLowered"								text="Se baja" />
 		<text name="turnedOnImplement"						text="Encendido" />
-		<text name="useVeExTabOrder"						text="Use VehicleExplorers ordered list for tabbing" />
+		<text name="useVeExTabOrder"						text="Use la lista ordenada de VehicleExplorers para tabular" />
 		<text name="field"									text="Campo" />
-		<text name="operationHours"							text="Operation hours" />
+		<text name="operationHours"							text="Horas Trabajo" />
 	</texts>
 </l10n>
