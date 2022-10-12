@@ -256,6 +256,7 @@ end
 function VehicleSort:mouseEvent(posX, posY, isDown, isUp, button)
 	if VehicleSort:isActionAllowed() and ( isDown and button == Input.MOUSE_BUTTON_LEFT) then
 		VehicleSort.action_vsChangeVehicle();
+		VehicleSort.showVehicles = false; -- close vehicle list after vehicle selected
 	end
 
 	if VehicleSort:isActionAllowed() and ( isDown and button == Input.MOUSE_BUTTON_RIGHT) then
