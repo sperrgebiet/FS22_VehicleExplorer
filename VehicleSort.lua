@@ -10,7 +10,7 @@ VehicleSort.eventName = {};
 --VehicleSort.ModDirectory = g_currentModDirectory
 VehicleSort.ModName = "FS22_VehicleExplorer"
 VehicleSort.ModDirectory = g_modManager.nameToMod.FS22_VehicleExplorer.modDir
-VehicleSort.Version = "0.2.0.4";
+VehicleSort.Version = "0.2.0.5";
 
 
 VehicleSort.debug = fileExists(VehicleSort.ModDirectory ..'debug');
@@ -1644,7 +1644,7 @@ function VehicleSort:getInfoTexts(realId)
 			doSpacing = true;
 		end
 		
-		if (veh.ad ~= nil and veh.ad.stateModule.active) then
+		if (veh.ad ~= nil and veh.ad.stateModule ~= nil and veh.ad.stateModule.active) then
 			if veh.ad.stateModule.firstMarker ~= nil and veh.ad.stateModule.mode ~= 1 then
 				local target1 = "";
 				local target2 = "";
